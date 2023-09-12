@@ -1,0 +1,21 @@
+const int SW = 12;
+const int LED = 13;
+int flag = 0;  //0일때 OFF /1일때 ON
+void setup() {
+  Serial.begin(115200);
+  pinMode(SW, INPUT);
+  pinMode(LED, INPUT);
+  digitalWrite(LED, LOW);  // 하드웨어 초기화
+}
+
+void loop() {
+  if (flag == 1) {
+    if (flag == 0) {
+      digitalWrite(LED, HIGH);
+      flag = 1;
+    } else {
+      digitalWrite(LED, LOW);
+      flag = 0;
+    }
+  }
+}
