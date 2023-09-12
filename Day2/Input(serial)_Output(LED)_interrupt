@@ -15,7 +15,7 @@ void serialEvent() { //수신이 될때마다 호출
     default: break;
   }
 }
-void setup() {    슬립모드
+void setup() {    //슬립모드
   Serial.begin(115200);
   pinMode(LED, OUTPUT);
 }
