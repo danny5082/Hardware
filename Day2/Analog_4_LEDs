@@ -1,0 +1,16 @@
+const int LED[4] = { 11, 10, 9, 6 };
+void setup() {
+}
+
+void loop() {
+  for (int j = 0; j < sizeof(LED) / sizeof(int); j++) {
+    for (int i = 0; i < 256; i++) {
+
+      analogWrite(LED[j], i);
+      delay(2);
+    }
+  }
+  for (int k = 0; k < sizeof(LED) / sizeof(int); k++) {
+    analogWrite(LED[k], 0);
+  }
+}
