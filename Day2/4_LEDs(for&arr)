@@ -2,7 +2,7 @@ const int LED[4] = { 8, 9, 10, 11 };
 
 void setup() {
   for (int i = 0; i < sizeof(LED) / sizeof(int); i++) {
-    pinMode(LED[i], OUTPUT);  // 13번 핀을 OUTPUT으로 설정함
+    pinMode(LED[i], OUTPUT); 
   }
 }
 
