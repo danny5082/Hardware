@@ -1,0 +1,18 @@
+const int LED = 9;
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(LED, OUTPUT);
+}
+
+void loop() {
+  if (Serial.available()) {
+    String userInput = Serial.readStringUntil('\n');
+    
+    if (userInput == "LED_ON") {
+      digitalWrite(LED, HIGH);
+    } else if (userInput == "LED_OFF") {
+      digitalWrite(LED, LOW);
+    }
+  }
+}
