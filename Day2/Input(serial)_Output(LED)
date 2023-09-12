@@ -1,0 +1,23 @@
+const int LED = 9;
+void setup() {
+  Serial.begin(115200);
+  pinMode(LED , OUTPUT);
+}
+
+void loop() {
+  if (Serial.available()) {  //값이 들어온지 안들어온지 확인
+    char userInput = Serial.read();
+    Serial.print(userInput);
+
+    switch(userInput){
+      case 'n':
+      digitalWrite(LED , HIGH);
+      break;
+
+      case 'f':
+      digitalWrite(LED , LOW);
+            break;
+
+    }
+  }
+}
