@@ -1,0 +1,24 @@
+const int LED = 9;
+
+void serialEvent() { //수신이 될때마다 호출
+  char userInput = Serial.read();
+  Serial.print(userInput);
+
+  switch (userInput) {
+    case 'n':
+      digitalWrite(LED, HIGH);
+      break;
+
+    case 'f':
+      digitalWrite(LED, LOW);
+      break;
+    default: break;
+  }
+}
+void setup() {    슬립모드
+  Serial.begin(115200);
+  pinMode(LED, OUTPUT);
+}
+
+void loop() {
+}
