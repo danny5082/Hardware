@@ -1,7 +1,8 @@
+#include "PinChangeInterrupt.h"
 const int LED1 = 10;
 const int LED2 = 11;
-const int SW1 = 2;
-const int SW2 = 3;
+const int SW1 = 4;
+const int SW2 = 5;
 int flag1 = 0;  // 0 : OFF, 1 : ON
 int flag2 = 0;
 
@@ -35,8 +36,10 @@ void setup() {
   pinMode(LED2, OUTPUT);
   digitalWrite(LED1, LOW);
   digitalWrite(LED2, LOW);
-  attachInterrupt(digitalPinToInterrupt(SW1), SW1_Pressed, RISING);
-  attachInterrupt(digitalPinToInterrupt(SW2), SW2_Pressed, RISING);
+  //attachInterrupt(digitalPinToInterrupt(SW1), SW1_Pressed, RISING);
+  //attachInterrupt(digitalPinToInterrupt(SW2), SW2_Pressed, RISING);
+  attachPCINT(digitalPinToPCINT(SW1),SW1_Pressed, RISING);
+  attachPCINT(digitalPinToPCINT(SW2),SW2_Pressed, RISING);
 }
 
 void loop() {
