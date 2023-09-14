@@ -1,0 +1,11 @@
+const int analogPin = A0;  // 아날로그 핀 A0에 연결된 센서
+
+void setup() {
+  Serial.begin(115200);  // 시리얼 통신 초기화
+}
+
+void loop() {
+  int sensorValue = analogRead(analogPin);  // 아날로그 값 읽기
+  Serial.println(sensorValue);  // 센서 값 시리얼 통신으로 전송
+  //delay(1000);  // 1초 대기 값이 계속 튀어서 딜레이 없이 받음
+}
