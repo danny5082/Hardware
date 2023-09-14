@@ -1,0 +1,20 @@
+int receivedValue;
+const int ledPin = 10;  // LED가 연결된 핀
+
+void setup() {
+  Serial.begin(115200);  // 시리얼 통신 초기화
+  pinMode(ledPin, OUTPUT);  // LED 핀을 출력 모드로 설정
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    receivedValue = Serial.parseInt();
+    Serial.println(receivedValue);  // 시리얼에서 수신한 값을 읽음
+    // 수신한 값을 기준으로 LED를 제어
+    if (receivedValue > 980) {
+      digitalWrite(ledPin, HIGH);  // LED를 켬
+    } else {
+      digitalWrite(ledPin, LOW);  // LED를 끔
+    }
+  }
+}
