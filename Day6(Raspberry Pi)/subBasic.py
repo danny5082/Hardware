@@ -1,4 +1,5 @@
 # file name : subBasic.py
+#/workspace/python/mqtt $
 import paho.mqtt.client as mqtt
 
 def on_connect( client, userdata, flags, rc ):
