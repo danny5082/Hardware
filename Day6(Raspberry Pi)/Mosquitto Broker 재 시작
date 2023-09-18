@@ -1,0 +1,2 @@
+#pi@raspberrypi:/etc/mosquitto/conf.d $ sudo systemctl stop mosquitto
+#pi@raspberrypi:/etc/mosquitto/conf.d $ mosquitto -c my.conf –v
