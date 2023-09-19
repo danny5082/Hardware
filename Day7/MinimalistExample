@@ -1,0 +1,27 @@
+#include "SparkFunLIS3DH.h"
+#include "Wire.h"
+#include "SPI.h"
+
+LIS3DH myIMU; //Default constructor is I2C, addr 0x19.
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  delay(1000); //relax...
+  
+  //Call .begin() to configure the IMU
+  myIMU.begin();
+
+}
+
+
+void loop()
+{
+  Serial.print(myIMU.readFloatAccelX(), 4);
+  Serial.print(" ");
+  Serial.print(myIMU.readFloatAccelY(), 4);
+  Serial.print(" ");
+  Serial.println(myIMU.readFloatAccelZ(), 4);
+
+  delay(1000);
+}
